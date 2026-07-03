@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Trek — Gantabya Treks & Expeditions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="booking.css">
+</head>
+<body class="booking-page">
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <svg class="logo-mark" viewBox="0 0 32 32" fill="none">
+        <path d="M2 24L10 10L15 18L19 11L30 24H2Z" fill="#16313F"/>
+        <path d="M19 11L23 16L20.5 16L22 18.5L24.5 18.5L26.5 21L17 21L19 11Z" fill="#C0622D"/>
+      </svg>
+      <span class="logo-text">GANTA<span>BYA</span></span>
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html#treks">Treks</a>
+      <a href="index.html#how">How It Works</a>
+      <a href="index.html#welfare">Our Promise</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <a href="index.html" class="nav-cta">← Back to Site</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="booking-header">
+  <div class="wrap">
+    <span class="eyebrow">Online Booking</span>
+    <h1>Reserve Your Trek</h1>
+    <p>Complete in 3 steps — takes less than 5 minutes.</p>
+  </div>
+</div>
+
+<!-- STEP INDICATOR -->
+<div class="steps-bar">
+  <div class="steps-inner">
+    <div class="step-item active" data-step="1">
+      <div class="step-num">1</div>
+      <span>Trek & Dates</span>
+    </div>
+    <div class="step-item" data-step="2">
+      <div class="step-num">2</div>
+      <span>Traveller Info</span>
+    </div>
+    <div class="step-item" data-step="3">
+      <div class="step-num">3</div>
+      <span>Payment</span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="booking-layout">
+
+  <!-- ════ LEFT: PANELS ════════════════════════════════════ -->
+  <div>
+
+    <!-- STEP 1 — Trek & Dates -->
+    <div class="booking-panel active" id="panel-1">
+      <h2 class="panel-title">Choose Your Trek</h2>
+      <p class="panel-subtitle">Select a trek, your preferred start date, group size, and any extras.</p>
+
+      <!-- Trek selector -->
+      <div class="trek-selector">
+
+        <label class="trek-option" data-trek="ebc">
+          <input type="radio" name="trek" value="ebc">
+          <div class="trek-option-info">
+            <h4>Everest Base Camp</h4>
+            <p>14 Days &nbsp;·&nbsp; 5,364m &nbsp;·&nbsp; Hard &nbsp;·&nbsp; Khumbu Region</p>
+          </div>
+          <div class="trek-option-price">from USD 1,050</div>
+        </label>
+
+        <label class="trek-option" data-trek="abc">
+          <input type="radio" name="trek" value="abc">
+          <div class="trek-option-info">
+            <h4>Annapurna Sanctuary</h4>
+            <p>10 Days &nbsp;·&nbsp; 4,130m &nbsp;·&nbsp; Moderate &nbsp;·&nbsp; Annapurna Region</p>
+          </div>
+          <div class="trek-option-price">from USD 720</div>
+        </label>
+
+        <label class="trek-option" data-trek="gokyo">
+          <input type="radio" name="trek" value="gokyo">
+          <div class="trek-option-info">
+            <h4>Namche &amp; Gokyo Lakes</h4>
+            <p>12 Days &nbsp;·&nbsp; 5,357m &nbsp;·&nbsp; Hard &nbsp;·&nbsp; Khumbu Region</p>
+          </div>
+          <div class="trek-option-price">from USD 950</div>
+        </label>
+
+      </div>
+
+      <!-- Date + group -->
+      <div class="date-group-row">
+        <div class="bform-group">
+          <label for="b-date">Preferred Start Date <span class="req">*</span></label>
+          <input type="date" id="b-date">
+        </div>
+        <div class="bform-group">
+          <label for="b-group">Group Size <span class="req">*</span></label>
+          <select id="b-group">
+            <option value="1">Solo (1 person)</option>
+            <option value="2">2 people</option>
+            <option value="3">3 people</option>
+            <option value="4">4 people</option>
+            <option value="5+">5+ people</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Add-ons -->
+      <p style="font-size:.85rem;font-weight:600;color:var(--navy);margin-bottom:12px;">Optional Add-ons</p>
+      <div class="addons-grid">
+        <label class="addon-item" data-addon="insurance">
+          <input type="checkbox" value="insurance">
+          <div class="addon-label">
+            <h5>Travel Insurance</h5>
+            <p>Medical evacuation &amp; trip cancellation</p>
+          </div>
+          <span class="addon-price">+$120/pp</span>
+        </label>
+        <label class="addon-item" data-addon="porter">
+          <input type="checkbox" value="porter">
+          <div class="addon-label">
+            <h5>Personal Porter</h5>
+            <p>Dedicated porter, 18kg max load</p>
+          </div>
+          <span class="addon-price">+$180/pp</span>
+        </label>
+        <label class="addon-item" data-addon="transfer">
+          <input type="checkbox" value="transfer">
+          <div class="addon-label">
+            <h5>Airport Transfer</h5>
+            <p>Private pickup/drop Kathmandu airport</p>
+          </div>
+          <span class="addon-price">+$45/pp</span>
+        </label>
+        <label class="addon-item" data-addon="gear">
+          <input type="checkbox" value="gear">
+          <div class="addon-label">
+            <h5>Gear Rental Package</h5>
+            <p>Sleeping bag, down jacket, poles</p>
+          </div>
+          <span class="addon-price">+$60/pp</span>
+        </label>
+      </div>
+
+      <div class="step-nav">
+        <span style="font-size:.82rem;color:var(--muted);">30% deposit secures your booking.</span>
+        <button class="btn btn-primary" id="step1-next">Continue to Traveller Info →</button>
+      </div>
+    </div><!-- /panel-1 -->
+
+
+    <!-- STEP 2 — Traveller Info -->
+    <div class="booking-panel" id="panel-2">
+      <h2 class="panel-title">Traveller Details</h2>
+      <p class="panel-subtitle">We need this for permits, insurance, and emergency contacts. All fields marked * are required.</p>
+
+      <div id="travellers-wrap">
+        <!-- Built dynamically by booking.js buildTravellers() -->
+      </div>
+
+      <div class="bform-group full-width" style="margin-bottom:22px;">
+        <label for="special-req">Special Requirements / Medical Notes</label>
+        <textarea id="special-req" rows="3" placeholder="Any dietary restrictions, medical conditions, or specific requests…"></textarea>
+      </div>
+
+      <div class="step-nav">
+        <button class="btn btn-back" id="step2-back">← Back</button>
+        <button class="btn btn-primary" id="step2-next">Continue to Payment →</button>
+      </div>
+    </div><!-- /panel-2 -->
+
+
+    <!-- STEP 3 — Payment -->
+    <div class="booking-panel" id="panel-3">
+      <h2 class="panel-title">Payment</h2>
+      <p class="panel-subtitle">A 30% deposit secures your trek. The balance is due 30 days before departure.</p>
+
+      <!-- Booking summary strip -->
+      <div style="background:var(--cream);border:1px solid var(--line);padding:18px 20px;margin-bottom:28px;">
+        <p style="font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--terracotta);margin-bottom:12px;">Booking Summary</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;font-size:.88rem;">
+          <div><span style="color:var(--muted);">Trek</span><br><strong id="pay-summary-trek">—</strong></div>
+          <div><span style="color:var(--muted);">Travellers</span><br><strong id="pay-summary-pax">—</strong></div>
+          <div><span style="color:var(--muted);">Start Date</span><br><strong id="pay-summary-date">—</strong></div>
+          <div><span style="color:var(--muted);">Total</span><br><strong id="pay-summary-total">—</strong></div>
+        </div>
+        <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;">
+          <div>
+            <p style="font-size:.8rem;color:var(--muted);">Amount Due Now (30% deposit)</p>
+            <p style="font-family:'JetBrains Mono',monospace;font-size:1.1rem;font-weight:700;color:var(--navy);" id="pay-deposit-usd">—</p>
+            <p style="font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--muted);" id="pay-deposit-npr">—</p>
+          </div>
+          <div style="font-size:.78rem;color:var(--muted);text-align:right;max-width:180px;">Balance due 30 days before your trek start date.</div>
+        </div>
+      </div>
+
+      <!-- Payment method selector -->
+      <p style="font-size:.85rem;font-weight:600;color:var(--navy);margin-bottom:14px;">Select Payment Method</p>
+      <div class="payment-methods">
+        <div class="pay-method selected" data-method="esewa">
+          <input type="radio" name="paymethod" checked>
+          <div class="pay-method-label">
+            <h4>eSewa</h4>
+            <p>Scan QR code to pay</p>
+          </div>
+        </div>
+        <div class="pay-method" data-method="bank">
+          <input type="radio" name="paymethod">
+          <div class="pay-method-label">
+            <h4>Bank Transfer</h4>
+            <p>Nepal or international wire</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- eSewa QR Panel -->
+      <div class="esewa-panel active" id="esewa-panel">
+        <img src="esewa-qr.jpg" alt="eSewa QR code — Aarab Adhikari 9705243789">
+        <div class="esewa-name">Aarab Adhikari</div>
+        <div class="esewa-number">9705243789</div>
+        <div class="esewa-amount-box">
+          <div class="amt-label">Deposit Amount (30%)</div>
+          <div class="amt-value" id="esewa-amt-npr">NPR —</div>
+          <div style="font-size:.75rem;color:#B9C4C8;margin-top:2px;" id="esewa-amt-usd"></div>
+        </div>
+        <p class="esewa-instructions">
+          1. Open your <strong>eSewa</strong> app.<br>
+          2. Tap <strong>Scan QR</strong> and scan the code above.<br>
+          3. Enter the exact deposit amount shown.<br>
+          4. Add your booking name in the remarks field.<br>
+          5. Complete the payment and copy your <strong>Transaction ID</strong> below.
+        </p>
+      </div>
+
+      <!-- Bank Transfer Panel -->
+      <div class="bank-panel" id="bank-panel">
+        <p style="font-size:.85rem;color:var(--muted);margin-bottom:18px;">Transfer the deposit amount to the account below. Use your name and trek as the payment reference.</p>
+        <div class="bank-detail"><span>Account Name</span><span>Gantabya Treks & Expeditions</span></div>
+        <div class="bank-detail"><span>Bank</span><span>Nepal Investment Mega Bank</span></div>
+        <div class="bank-detail"><span>Account No.</span><span>XXXX-XXXX-XXXX-XXXX</span></div>
+        <div class="bank-detail"><span>SWIFT / BIC</span><span>NIBLNPKT</span></div>
+        <div class="bank-detail"><span>Branch</span><span>Thamel, Kathmandu</span></div>
+        <div class="bank-detail"><span>Currency</span><span>NPR / USD accepted</span></div>
+      </div>
+
+      <!-- Transaction Reference -->
+      <div class="txn-ref-box">
+        <div class="bform-group">
+          <label for="txn-ref">Transaction / Reference Number <span class="req">*</span></label>
+          <input type="text" id="txn-ref" placeholder="e.g. eSewa TXN ID or bank reference number">
+          <p class="txn-note">Enter the transaction ID or reference number you received after payment. We will verify within 24 hours and send a confirmation email.</p>
+        </div>
+      </div>
+
+      <div class="step-nav">
+        <button class="btn btn-back" id="step3-back">← Back</button>
+        <button class="btn btn-primary" id="confirm-booking">✓ Confirm Booking</button>
+      </div>
+    </div><!-- /panel-3 -->
+
+
+    <!-- CONFIRMATION -->
+    <div class="confirmation-panel" id="panel-confirm">
+      <div class="confirm-icon">🏔️</div>
+      <h2 style="color:var(--navy);margin-bottom:8px;">Booking Received!</h2>
+      <p style="color:var(--muted);max-width:420px;margin:0 auto 16px;">Your trek reservation is confirmed pending payment verification. We'll send a confirmation to your email within 24 hours.</p>
+      <div class="confirm-ref" id="conf-ref">GTB-XXXXXXXX</div>
+      <div class="confirm-details">
+        <div class="confirm-row"><span>Name</span><span id="conf-name">—</span></div>
+        <div class="confirm-row"><span>Email</span><span id="conf-email">—</span></div>
+        <div class="confirm-row"><span>Trek</span><span id="conf-trek">—</span></div>
+        <div class="confirm-row"><span>Start Date</span><span id="conf-date">—</span></div>
+        <div class="confirm-row"><span>Group Size</span><span id="conf-pax">—</span></div>
+        <div class="confirm-row"><span>Total Amount</span><span id="conf-total">—</span></div>
+        <div class="confirm-row"><span>Payment Ref</span><span id="conf-txn">—</span></div>
+      </div>
+      <div style="margin-top:28px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="index.html" class="btn btn-navy">← Back to Home</a>
+        <button class="btn btn-primary" onclick="window.print()">Print Confirmation</button>
+      </div>
+      <p style="font-size:.8rem;color:var(--muted);margin-top:20px;">Save your booking reference: <strong id="conf-ref-copy"></strong></p>
+    </div><!-- /confirmation -->
+
+  </div><!-- /left -->
+
+
+  <!-- ════ RIGHT: SIDEBAR ══════════════════════════════════ -->
+  <div class="booking-sidebar">
+
+    <div class="sidebar-card">
+      <p class="sidebar-title">Your Trek</p>
+      <div class="sidebar-trek-name"   id="sb-trek-name">— not selected —</div>
+      <div class="sidebar-trek-region" id="sb-trek-region"></div>
+      <div class="sidebar-meta-item"><span>Duration</span><span id="sb-days">—</span></div>
+      <div class="sidebar-meta-item"><span>Max Altitude</span><span id="sb-altitude">—</span></div>
+      <div class="sidebar-meta-item"><span>Difficulty</span><span id="sb-difficulty">—</span></div>
+      <div class="sidebar-meta-item"><span>Start Date</span><span id="sb-date">—</span></div>
+      <div class="sidebar-meta-item"><span>Group Size</span><span id="sb-group">—</span></div>
+    </div>
+
+    <div class="sidebar-card">
+      <p class="sidebar-title">Price Breakdown</p>
+      <div class="price-breakdown" id="sb-breakdown">
+        <p style="color:var(--muted);font-size:.85rem;">Select a trek to see pricing.</p>
+      </div>
+      <div class="price-total">
+        <span>Total</span>
+        <div>
+          <div id="sb-total">—</div>
+          <div id="sb-total-npr" style="font-size:.78rem;color:var(--muted);font-family:'JetBrains Mono',monospace;text-align:right;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <p class="sidebar-title">Porter &amp; Guide Welfare</p>
+      <div class="welfare-badge">
+        <span class="welfare-badge-icon">✓</span>
+        <div>
+          <strong>IPPG-aligned standards</strong><br>
+          18kg max porter load &middot; verified insurance &middot; fair documented pay — all enforced on every Gantabya trek.
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-card" style="font-size:.85rem;color:var(--muted);">
+      <p class="sidebar-title">Need Help?</p>
+      <p style="margin-bottom:10px;">Our team is available to assist with any booking questions.</p>
+      <p>📞 <strong>+977 1-XXXXXXX</strong></p>
+      <p>✉️ <strong>hello@gantabya.com.np</strong></p>
+      <p style="margin-top:10px;">WhatsApp: <strong>+977 98XXXXXXXX</strong></p>
+    </div>
+
+  </div><!-- /sidebar -->
+
+</div><!-- /booking-layout -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h5>Gantabya Treks &amp; Expeditions</h5>
+        <p style="max-width:260px;">गन्तब्य — Nepali for "destination." Built on visible, verifiable Himalayan trekking operations.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <a href="index.html#treks">Treks</a>
+        <a href="index.html#how">How It Works</a>
+        <a href="index.html#welfare">Our Promise</a>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="#">About</a>
+        <a href="#">Guides &amp; Porters</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div>
+        <h5>Reach Us</h5>
+        <p>Thamel, Kathmandu</p>
+        <p>hello@gantabya.com.np</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Gantabya Treks &amp; Expeditions.</span>
+      <span>Built for the mountains.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script src="booking.js"></script>
+</body>
+</html>
